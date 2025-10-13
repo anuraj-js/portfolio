@@ -361,13 +361,14 @@ main {
     padding-bottom: 0.4rem;
     font-size: 1.5rem;
     font-weight: 700;
+    transform: rotate(-20deg);
     transition: all 0.4s ease;
 }
 
 .theme-toggle-btn:hover,
 .theme-toggle-btn:active {
   color: var(--highlight);
-  transform: scale(1.2);
+  transform: rotate(-40deg) scale(1.2);
   text-shadow: 0 0 30px var(--highlight); 
 }
 
