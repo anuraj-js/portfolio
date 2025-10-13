@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav1">
+                <div class="logo-container">
+                    <a href="#home"><img src="final-logo.png" alt="logo"></a>
+                </div>
+            </div>
+            <div class="nav2">
+                <ul>
+                    <a href="#home"><li>Home</li></a>
+                    <a href="#skills"><li>Skills</li></a>
+                    <a href="#projects"><li>Projects</li></a>
+                    <a href="comming-soon.html" target="_blank"><li>Resume</li></a>
+                </ul>
+                <div class="theme-toggle-btn"><i class="fa-solid fa-sun"></i></div>
+                <div class="menu-icon"><i class="fa-solid fa-bars"></i></div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="sidebar">
+        <a href="#home">Home</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="comming-soon.html" target="_blank">Resume</a>
+        <div class="close-menu-icon"><i class="fa-solid fa-xmark"></i></div>
+    </div>
+
+    <div class="overlay"></div>
+    
+    <main>
+        <section class="hero-section" id="home">
+            <div class="left">
+                <h1>Hi, It's <span class="highlight">Anuraj</span></h1>
+                <h3 class="typing-text">I'm a <span class="highlight" id="typed-text"></span></h3>
+                <p>Studying BCA while learning JavaScript and building projects, with the goal of mastering React and Next.js</p>
+
+                <div class="social-icons">
+                    <a href="#"><div class="social-icon-container"><i class="fa-brands fa-facebook"></i></div></a>
+                    <a href="#"><div class="social-icon-container"><i class="fa-brands fa-github"></i></div></a>
+                    <a href="#"><div class="social-icon-container"><i class="fa-brands fa-instagram"></i></div></a>
+                </div>
+
+                <a href="#projects" class="cta-btn">View My Work</a>
+            </div>
+            <div class="right">
+                <div class="user-image-container">
+                    <div class="user-image"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="skills-section" id="skills">
+            <h2 class="title">Skills</h2>
+            <div class="skills-set-container">
+                <div skill-name="HTML" class="skill"><i class="fa-brands fa-html5"></i></div>
+                <div skill-name="CSS" class="skill"><i class="fa-brands fa-css3-alt"></i></div>
+                <div skill-name="JavaScript" class="skill"><i class="fa-brands fa-square-js"></i></div>
+                <div skill-name="Git" class="skill"><i class="fa-brands fa-git-alt"></i></div>
+                <div skill-name="GitHub" class="skill"><i class="fa-brands fa-square-github"></i></div>
+            </div>
+        </section>
+
+        <section class="projects-section" id="projects">
+            <div class="projects-data">
+                <h2 class="title">Projects</h2>
+                <p class="subtitle">Some highlights from my development journey.</p>
+            </div>
+            <div class="projects-tab-container">
+                <div class="projects-tab">
+                    <h3 class="projects-title">Beginner Projects</h3>
+                    <p class="projects-description">Simple beginnings — where I learned control, structure, and the basics that shaped everything that came after.</p>
+                    <a href="comming-soon.html" target="_blank" class="view-projects-btn">View Projects</a>
+                </div>
+
+                <div class="projects-tab">
+                    <h3 class="projects-title">Intermediate Projects</h3>
+                    <p class="projects-description">Projects where my logic, design, and intent started syncing — every build more refined, more deliberate.</p>
+                    <a href="comming-soon.html" target="_blank" class="view-projects-btn">View Projects</a>
+                </div>
+
+                <div class="projects-tab">
+                    <h3 class="projects-title">Advanced Projects</h3>
+                    <p class="projects-description">Complex builds, real-world logic, and visual precision — where creativity and discipline finally meet.</p>
+                    <a href="comming-soon.html" target="_blank" class="view-projects-btn">View Projects</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <a href="#home" class="scrollup"><i class="fa-solid fa-arrow-up"></i></a>
+
+
+    <script>
+
+        //Type effect
+        document.addEventListener("DOMContentLoaded", () => {
+            const text = "Frontend Developer";
+            const typedText = document.getElementById("typed-text");
+            let index = 0;
+
+            function typeEffect() {
+                if (index < text.length) {
+                    typedText.textContent += text.charAt(index);
+                    index++;
+                    setTimeout(typeEffect, 120); 
+                }
+            }
+
+            typeEffect();
+        });
+
+        //Theme Toggle
+        const themeToggleBtn = document.querySelector('.theme-toggle-btn');
+        const body = document.body;
+
+        const theme = localStorage.getItem('theme');
+
+        if (theme === 'light') {
+            body.classList.add('light-mode');
+            themeToggleBtn.innerHTML = '<i class="fa-solid fa-moon"></i>';
+        }
+
+        themeToggleBtn.addEventListener('click', () => {
+            body.classList.toggle('light-mode');
+
+            if (body.classList.contains('light-mode')) {
+                themeToggleBtn.innerHTML = '<i class="fa-solid fa-moon"></i>';
+                localStorage.setItem('theme', 'light');
+            } else {
+                themeToggleBtn.innerHTML = '<i class="fa-solid fa-sun"></i>';
+                localStorage.setItem('theme', 'dark');
+            }
+        })
+
+        //sidebar
+        const menuIcon = document.querySelector('.menu-icon');
+        const sidebar = document.querySelector('.sidebar');
+        const closeMenuIcon = document.querySelector('.close-menu-icon');
+        const overlay = document.querySelector('.overlay');
+        const sidebarLinks = document.querySelectorAll('.sidebar a');
+
+        function closeSideBar() {
+            menuIcon.style.visibility = 'visible';
+            sidebar.classList.remove('active');
+            overlay.style.display = 'none';
+            document.body.style.overflowY = 'auto';
+        }
+
+        menuIcon.addEventListener('click', () => {
+            menuIcon.style.visibility = 'hidden';
+            sidebar.classList.add('active');
+            overlay.style.display = 'block';
+            document.body.style.overflowY = 'hidden';
+        })
+
+        closeMenuIcon.addEventListener('click', closeSideBar);
+
+        overlay.addEventListener('click', closeSideBar);
+
+        for (let i = 0; i < sidebarLinks.length; i++) {
+            sidebarLinks[i].addEventListener('click', closeSideBar);
+        }
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 800) {
+                closeSideBar();
+            }
+        })
+
+        //scrollup
+        
+        window.addEventListener('scroll', ()=>{
+            if (window.scrollY >= 300) {
+                document.querySelector('.scrollup').classList.add('active');
+            } else {
+                document.querySelector('.scrollup').classList.remove('active');
+            }
+        })
+
+
+    </script>
+
+</body>
+</html>
