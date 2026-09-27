@@ -537,47 +537,6 @@ main {
   transform: scale(1.05);
 }
 
-.play-overlay {
-  position: absolute;
-  inset: 0;
-  background-color: rgba(0, 0, 0, 0.55);
-  border: none;
-  cursor: pointer;
-  color: var(--primary-text);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  font-family: NeueMachina;
-  font-size: 1rem;
-  font-weight: 700;
-  letter-spacing: 1px;
-  opacity: 1;
-  transition: background-color 0.3s ease;
-}
-
-.play-overlay:hover {
-  background-color: rgba(0, 0, 0, 0.7);
-}
-
-.play-overlay i {
-  font-size: 2.5rem;
-  color: var(--highlight);
-  border: 3px solid var(--highlight);
-  border-radius: 50%;
-  height: 70px;
-  width: 70px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: transform 0.3s ease;
-}
-
-.play-overlay:hover i {
-  transform: scale(1.1);
-}
-
 .project-body {
   padding: 22px;
   display: flex;
@@ -630,17 +589,6 @@ main {
   font-size: 0.75rem;
 }
 
-.project-status {
-  color: #f0b429;
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.3px;
-  background-color: var(--primary-background);
-  padding: 6px 10px;
-  border-radius: 8px;
-  border-left: 3px solid #f0b429;
-}
-
 .project-college {
   color: var(--primary-text);
   font-size: 0.78rem;
@@ -671,14 +619,17 @@ main {
   transition: all 0.3s ease;
 }
 
-.link-live {
+.link-live,
+.link-demo {
   background-color: var(--highlight);
   color: var(--primary-background);
   border: 2px solid var(--highlight);
 }
 
 .link-live:hover,
-.link-live:active {
+.link-live:active,
+.link-demo:hover,
+.link-demo:active {
   transform: scale(1.05);
   box-shadow: 0 0 10px var(--highlight);
 }
@@ -694,90 +645,6 @@ main {
   transform: scale(1.05);
   border-color: var(--highlight);
   color: var(--highlight);
-}
-
-/* ========== VIDEO MODAL ========== */
-.video-modal {
-  position: fixed;
-  inset: 0;
-  background-color: rgba(0, 0, 0, 0.85);
-  z-index: 100;
-  display: none;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-}
-
-.video-modal.active {
-  display: flex;
-}
-
-.video-modal-content {
-  background-color: var(--secondary-background);
-  border-radius: 16px;
-  padding: 20px;
-  width: 100%;
-  max-width: 900px;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.video-close {
-  position: absolute;
-  top: 10px;
-  right: 12px;
-  background: transparent;
-  border: none;
-  color: var(--primary-text);
-  font-size: 1.6rem;
-  cursor: pointer;
-  transition: color 0.3s ease, transform 0.3s ease;
-  z-index: 2;
-}
-
-.video-close:hover {
-  color: var(--highlight);
-  transform: scale(1.2);
-}
-
-.video-tabs {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  padding-top: 25px;
-}
-
-.video-tab {
-  background: transparent;
-  color: var(--secondary-text);
-  border: 2px solid var(--secondary-text);
-  padding: 8px 16px;
-  border-radius: 8px;
-  font-family: NeueMachina;
-  font-size: 0.85rem;
-  font-weight: 700;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.video-tab:hover {
-  color: var(--highlight);
-  border-color: var(--highlight);
-}
-
-.video-tab.active {
-  background-color: var(--highlight);
-  color: var(--primary-background);
-  border-color: var(--highlight);
-}
-
-.video-modal video {
-  width: 100%;
-  border-radius: 10px;
-  background-color: #000;
-  max-height: 70vh;
 }
 
 /* ========== SCROLLUP ========== */
@@ -1045,13 +912,5 @@ main {
   .user-image-container {
     height: 330px;
     width: 260px;
-  }
-
-  .video-tabs {
-    flex-direction: column;
-  }
-
-  .video-tab {
-    width: 100%;
   }
 }
