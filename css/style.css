@@ -589,7 +589,8 @@ main {
   font-size: 0.75rem;
 }
 
-.project-college {
+.project-college,
+.project-status {
   color: var(--primary-text);
   font-size: 0.78rem;
   font-weight: 700;
@@ -598,6 +599,19 @@ main {
   padding: 6px 10px;
   border-radius: 8px;
   border-left: 3px solid var(--highlight);
+}
+
+.project-status {
+  border-left: 3px solid rgb(241, 176, 12);
+  display: flex;
+  align-items: flex-start;
+  gap: 8px; 
+}
+
+.project-status i {
+  color: rgb(241, 176, 12);
+  font-size: 0.85rem; 
+  margin-top: 2px; 
 }
 
 .project-links {
