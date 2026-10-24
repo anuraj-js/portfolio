@@ -18,6 +18,8 @@ I'm a BCA student learning frontend development with React, currently expanding 
 
 - **StudyDesk** — A full-stack student productivity web app with task management, exam planning, Pomodoro timer, and feedback system. Built as a 4th-semester BCA project under Tribhuvan University. ([Code](https://github.com/anuraj-js/studydesk))
 
+- **StudyDesk Lite** — A lightweight, full-featured study dashboard combining task management, exam planning, note-taking, and a Pomodoro timer into a single offline-capable PWA. Built entirely with vanilla HTML, CSS, and JavaScript as a frontend-only application, allowing free deployment. ([Live](https://anuraj-js.github.io/studydesk-lite) · [Code](https://github.com/anuraj-js/studydesk-lite))
+
 - **React Chatbot** — A chatbot interface built with React and Vite, with a custom response engine. ([Live](https://chatbot-project-ochre-omega.vercel.app) · [Code](https://github.com/anuraj-js/chatbot-project))
 
 ## Contact
